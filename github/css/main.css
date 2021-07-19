@@ -75,6 +75,31 @@ a {
   float: right;
 }
 
+/* SUMMARY */
+.summary__title {
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+.summary__description {
+  font-size: 26px;
+  font-weight: 300;
+  color: #767676;
+  line-height: 1.5;
+}
+
+/* SECTION & INNER*/
+.section {
+  position: relative; /* position: absolute;를 사용했을 때 section을 위치상 부모 요소로 찾기 위함 */
+}
+.section .inner {
+  max-width: 980px;
+  margin: 0 auto; /* 요소의 가로 사이즈가 정해져 있어야 margin: 0 auto;로 가운데 정렬 가능 */
+  box-sizing: border-box;
+  position: relative; /* position: absolute;를 사용했을 때 inner를 위치상 부모 요소로 찾기 위함 */
+}
+
 /* HEADER */
 header {
   border-bottom: 1px solid rgba(0, 0, 0, .75);
@@ -82,9 +107,7 @@ header {
   background: #FFF;
 }
 header .inner {
-  max-width: 980px;
   height: 78px;
-  margin: 0 auto; /* 요소의 가로 사이즈가 정해져 있어야 margin: 0 auto;로 가운데 정렬 가능 */
 }
 header .menu-group {
   display: flex; /* 수평 정렬 */
@@ -154,4 +177,69 @@ header .sub-menu li a {
 }
 header .sub-menu li a:hover {
   color: #4078c0;
+}
+
+/* VISUAL */
+.section--visual {
+  background: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: cover; /* 배경 이미지로 요소 전체 영역을 커버 */
+}
+.section--visual::before {
+  content: "";
+  position: absolute; /* 부모 요소는 section */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .3);
+}
+.section--visual .inner {
+  padding: 160px 0;
+  display: flex;
+}
+.section--visual .summary {
+  flex-grow: 1; /* Flex Item의 증가 너비 비율을 설정 */
+  flex-basis: 0; /* Flex Item의 (공간 배분 전) 기본 너비 설정 */
+  margin-right: 90px;
+}
+.section--visual .summary__title {
+  color: #FFF;
+  font-size: 54px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+              0 1px 25px rgba(0, 0, 0, .75);
+}
+.section--visual .summary__description {
+  color: #FFF;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .25),
+              0 1px 25px rgba(0, 0, 0, .75);
+}
+#sign-form {
+  margin-top: 16px;
+  width: 340px;
+}
+#sign-form li {
+  margin-bottom: 17px;
+}
+#sign-form li:last-child {
+  margin-bottom: 0;
+}
+#sign-form .input--text {
+  width: 100%;
+  height: 40px;
+}
+#sign-form .caption {
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, .6);
+  line-height: 1.5;
+  text-align: center;
+}
+#sign-form [type="submit"] {
+  width: 100%;
+  height: 62px;
+  padding: 0 25px;
+  font-size: 20px;
+  justify-content: center; /* inline-flex에서의 수평 정렬 (가운데 정렬) */
 }
