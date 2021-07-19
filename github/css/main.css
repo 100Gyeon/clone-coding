@@ -5,6 +5,9 @@
   font-weight: 400;
   color: #333;
 }
+a {
+  text-decoration: none;
+}
 
 /* BUTTON */
 .btn {
@@ -21,17 +24,18 @@
   cursor: pointer;
   box-sizing: border-box;
   position: relative; /* 아래 position: absolute를 위해 추가 */
+  color: #333;
 }
-.btn:hover {
+.btn:hover::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.07);
 }
-.btn.btn-primary {
+.btn.btn--primary {
   border: 1px solid #65b836;
   color: #fff;
   background: #55a532 linear-gradient(#91dd70, #55ae2e);
@@ -57,3 +61,97 @@
 .input--text::-webkit-input-placeholder { color: #cacaca; }
 .input--text::-ms-input-placeholder { color: #cacaca; }
 .input--text::-moz-input-placeholder { color: #cacaca; }
+
+/* FLOAT CLEARFIX */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.float--left {
+  float: left;
+}
+.float--right {
+  float: right;
+}
+
+/* HEADER */
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, .75);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .75);
+  background: #FFF;
+}
+header .inner {
+  max-width: 980px;
+  height: 78px;
+  margin: 0 auto; /* 요소의 가로 사이즈가 정해져 있어야 margin: 0 auto;로 가운데 정렬 가능 */
+}
+header .menu-group {
+  display: flex; /* 수평 정렬 */
+  align-items: center; /* 수직 정렬 */
+  height: 100%; /* menu-group의 부모인 inner의 영향을 받음 */
+}
+header .logo {
+  margin-right: 10px;
+}
+header .logo a {
+  background: url("../img/logo.svg");
+  width: 32px;
+  height: 32px;
+  display: block;
+  text-indent: -9999px; /* 대체 텍스트 역할을 위해 명시적으로 -9999px라는 수치 작성 */
+}
+header .logo a:hover {
+  background: url("../img/logo_on.svg");
+}
+header .main-menu {
+  display: flex;
+}
+header .main-menu li a {
+  display: block;
+  padding: 10px;
+  color: #3c4146;
+}
+header .main-menu li a:hover {
+  color: #4078c0;
+}
+header .sign-group {
+  /* menu-group과 동일하게 */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+header .btn-group {
+  order: 2; /* 숫자가 높을수록 순서가 뒤로 밀려난다. order의 기본값은 0 */
+  display: flex;
+}
+header .btn-group .sign-in {
+  margin-right: 4px;
+}
+#search-form {
+  order: 1;
+  margin-right: 12px;
+}
+#search {
+  width: 160px;
+  font-size: 14px;
+}
+#search + [type="submit"] {
+  /* + 기호는 인접 형제 선택자 */
+  /* [attribute="value"]에서 대괄호는 속성 선택자 */
+  display: none;
+}
+header .sub-menu {
+  display: flex;
+  
+  margin-right: 10px;
+}
+header .sub-menu li a {
+  padding: 8px;
+  display: block;
+  font-size: 13px;
+  color: #3c4146;
+}
+header .sub-menu li a:hover {
+  color: #4078c0;
+}
