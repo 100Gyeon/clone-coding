@@ -193,7 +193,7 @@ header .sub-menu li a:hover {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, .3);
+  background: rgba(0, 0, 0, .3); /* 배경 이미지를 어둡게 하기 위함 */
 }
 .section--visual .inner {
   padding: 160px 0;
@@ -242,4 +242,32 @@ header .sub-menu li a:hover {
   padding: 0 25px;
   font-size: 20px;
   justify-content: center; /* inline-flex에서의 수평 정렬 (가운데 정렬) */
+}
+
+/* FEATURE */
+.section--feature {
+  background: #f5f5f5;
+  padding-top: 66px;
+}
+.section--feature .summary {
+  max-width: 820px; /* 가변하는 너비를 정의할 때는 max-width 사용 */
+  margin: 0 auto;
+  text-align: center;
+}
+.section--feature .video {
+  max-width: 650px;
+  margin: 50px auto;
+
+}
+.section--feature .video .video-ratio {
+  height: 0;
+  padding-top: 56.25%; /* padding-top은 부모 요소의 가로너비에 영향을 받음, 비율(16:9)을 유지하기 위함 */
+  position: relative;
+}
+.section--feature .video .video-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
