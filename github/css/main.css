@@ -278,14 +278,15 @@ header .sub-menu li a:hover {
 .section--feature .tiles .inner {
   max-width: 1200px;
 }
+.section--feature .tiles ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 .section--feature .tiles li {
   padding: 34px 24px;
   text-align: center;
   line-height: 1.5;
   border-right: 1px solid #e5e5e5;
-  box-sizing: border-box;
-  float: left;
-  width: 25%;
 }
 .section--feature .tiles li:last-child {
   border-right: none;
@@ -303,4 +304,21 @@ header .sub-menu li a:hover {
 .section--feature .tiles li p {
   font-size: 14px;
   color: #767676;
+}
+
+/* WHERE IS */
+.section--where--is {
+
+}
+.section--where--is .inner {
+  padding-top: 80px;
+}
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  box-sizing: border-box;
 }
