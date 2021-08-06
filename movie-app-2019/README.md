@@ -8,27 +8,20 @@ React JS Fundamentals Course (2019 Update)
   - HTML을 반환하는 함수  
   - 대문자로 시작  
   - component에서 component로 정보를 보낼 수 있다.  
-<br>
 - props란?  
   - component에 넣게 되는 것들  
-  - props는 component의 argument로 간다.  
-  <br>
+  - props는 component의 argument로 간다.    
   ```javascript
-  import React from "react";
+    function Food(props) {
+      return <h1>I like {props.fav}.</h1>;
+    }
 
-  function Food(props) {
-    return <h1>I like {props.fav}.</h1>;
-  }
-
-  function App() {
-    return (
-      <div>
-        <Food fav="spaghetti">
-      </div>
-    );
-  }
-
-  export default App;
+    function App() {
+      return (
+        <div>
+          <Food fav="spaghetti">
+        </div>
+      );
+    }
   ```
-
 - JSX : JavaScript 안의 HTML
