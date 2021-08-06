@@ -16,7 +16,7 @@ React JS Fundamentals Course (2019 Update)
   - 리액트는 component와 함께 동작한다.  
 - props  
   - component에 넣게 되는 것들  
-  - <b>props는 component의 argument로 간다.</b>  
+  - **props는 component의 argument로 간다.**
     ```javascript
       function Food(props) {
         return <h1>I like {props.fav}.</h1>;
@@ -49,10 +49,13 @@ React JS Fundamentals Course (2019 Update)
     <Food key={dish.id} name={dish.name} picture={dish.image} />
     ```  
   - key prop은 리액트 내부에서 사용하기 위한 것으로, component의 argument에 없어도 된다.  
-- <b>class component</b>는 return을 가지고 있지 않다.
+- **class component**는 return을 가지고 있지 않다.
   - function component가 아니기 때문
   - 리액트는 자동적으로 class component의 render method를 실행하고자 한다.
 - state
   - state는 object이며, class component에 있다.
   - state에 바꾸고 싶은 data를 넣는다.
   - ```this.state.xxx```로 접근
+  - 💥 Do not mutate state directly. Use **setState()** 💥
+    - setState를 호출할 때마다 리액트는 state를 업데이트하고 render function을 다시 호출한다.
+    - setState를 호출할 때, 외부의 상태에 의존하지 않는 가장 좋은 방법 : ```this.state.xxx``` 대신 ```current.xxx``` 사용
