@@ -41,7 +41,7 @@ React JS Fundamentals Course (2019 Update)
       rating: PropTypes.number
     };
     ```
-    > [리액트 문서](https://ko.reactjs.org/docs/typechecking-with-proptypes.html)
+    > [Docs - Typechecking with proptypes](https://ko.reactjs.org/docs/typechecking-with-proptypes.html)
 - JSX : JavaScript 안의 HTML  
 - Each child in a list should have a unique "key" prop.  
   - 배열의 각 요소에 id를 부여함으로써 unique하게 만든다.  
@@ -59,3 +59,6 @@ React JS Fundamentals Course (2019 Update)
   - 💥 Do not mutate state directly. Use **setState()** 💥
     - setState를 호출할 때마다 리액트는 state를 업데이트하고 render function을 다시 호출한다.
     - setState를 호출할 때, 외부의 상태에 의존하지 않는 가장 좋은 방법 : ```this.state.xxx``` 대신 ```current.xxx``` 사용
+- life cycle method
+  - Mounting, Updating, Unmounting
+    > [Docs - Component Life Cycle](https://reactjs.org/docs/react-component.html)
