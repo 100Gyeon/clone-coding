@@ -56,9 +56,26 @@ React JS Fundamentals Course (2019 Update)
   - state는 object이며, class component에 있다.
   - state에 바꾸고 싶은 data를 넣는다.
   - ```this.state.xxx```로 접근
+    ```javascript
+    render() {
+      return (
+      <div>
+        <h1>The number is: {this.state.count}</h1>
+      </div>
+      );
+    }
+    ```
   - 💥 Do not mutate state directly. Use **setState()** 💥
     - setState를 호출할 때마다 리액트는 state를 업데이트하고 render function을 다시 호출한다.
     - setState를 호출할 때, 외부의 상태에 의존하지 않는 가장 좋은 방법 : ```this.state.xxx``` 대신 ```current.xxx``` 사용
+      ```javascript
+      state = {
+        count: 0
+      };
+      add = () => {
+        this.setState(current => ({ count: current.count + 1}));
+      };
+      ```
 - life cycle method
   - Mounting, Updating, Unmounting
-    > [Docs - Component Life Cycle](https://reactjs.org/docs/react-component.html)
+  > [Docs - Component Life Cycle](https://reactjs.org/docs/react-component.html)
