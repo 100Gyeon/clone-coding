@@ -76,6 +76,20 @@ React JS Fundamentals Course (2019 Update)
         this.setState(current => ({ count: current.count + 1}));
       };
       ```
+    - state 안에 default 값들을 선언할 필요는 없다.  
+      아래 코드의 setState에는 book이 있지만, state 안에는 book이 없어도 되는 것처럼.
+      ```javascript
+      state = {
+        isLoading: true
+      };
+      componentDidMount(){
+        setTimeout(() => {
+          this.setState({ isLoading: false, book: true })
+        }, 3000);
+      }
+      ```
 - life cycle method
-  - Mounting, Updating, Unmounting
   > [Docs - Component Life Cycle](https://reactjs.org/docs/react-component.html)
+  - Mounting, Updating, Unmounting
+  - render 이후 처음 호출되는 life cycle method는? **componentDidMount()**
+  - **앞으로 data fetch는 componentDidMount에서!**
