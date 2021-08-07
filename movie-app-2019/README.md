@@ -108,3 +108,22 @@ React JS Fundamentals Course (2019 Update)
     - 데이터 등록 및 전송 : **axios.post**(url, data[, config])
     - 데이터 수정 : **axios.put**(url, data[, config])
     - 데이터 삭제 : **axios.delete**(url[, config])
+- 더이상 state를 갖기 위해 class component를 가질 필요가 없다. 👉 리액트 **Hook** 때문
+- react-router-dom : 리액트에서 내비게이션을 만들어주는 패키지
+  ```
+  npm install react-router-dom
+  ```
+- 라우터가 하는 일
+  1. url을 가져와 확인/비교 
+  1. 명령에 해당하는 컴포넌트를 불러옴
+  ```javascript
+  function App(){
+    return <HashRouter>
+      <Route path="/" exact={true} component={Home} />
+      <Route path="/about" component={About} />
+    </HashRouter>;
+  }
+  ```
+  - 만약 내가 이 path로 가면, 이 component를 보여줘!
+  - route에 exact={true}를 추가한 이유 : /와 /about을 동시에 렌더링하지 않기 위해서.  
+    오로지 나의 url이 /여야 Home을 렌더링
