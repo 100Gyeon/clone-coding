@@ -93,3 +93,15 @@ React JS Fundamentals Course (2019 Update)
   - Mounting, Updating, Unmounting
   - render 이후 처음 호출되는 life cycle method는? **componentDidMount()**
   - **앞으로 data fetch는 componentDidMount에서!**
+- axios
+  ```
+  npm i axios
+  import axios from "axios";
+  ```
+  - fetch 위에 있는 작은 layer
+  - 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리
+  - axios의 Request method에는 다음과 같은 것들이 있다. 여기서 url은 API의 주소.
+    - 데이터 조회 : **axios.get**(url[, config])
+    - 데이터 등록 및 전송 : **axios.post**(url, data[, config])
+    - 데이터 수정 : **axios.put**(url, data[, config])
+    - 데이터 삭제 : **axios.delete**(url[, config])
