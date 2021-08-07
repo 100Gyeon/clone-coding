@@ -45,9 +45,12 @@ React JS Fundamentals Course (2019 Update)
 - JSX : JavaScript 안의 HTML  
 - Each child in a list should have a unique "key" prop.  
   - 배열의 각 요소에 id를 부여함으로써 unique하게 만든다.  
-    ```html
-    <Food key={dish.id} name={dish.name} picture={dish.image} />
+    ```javascript
+    {foodILike.map(dish => 
+      <Food key={dish.id} name={dish.name} picture={dish.image} />
+    )}
     ```  
+  - map에 있는 각각의 item은 key가 필요하다.
   - key prop은 리액트 내부에서 사용하기 위한 것으로, component의 argument에 없어도 된다.  
 - **class component**는 return을 가지고 있지 않다.
   - function component가 아니기 때문
