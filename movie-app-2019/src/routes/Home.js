@@ -3,7 +3,7 @@ import axios from "axios";
 import Movie from "../components/Movie";
 import "./Home.css";
 
-class Home extends React.Component{
+class Home extends React.Component {
   state = {
     isLoading: true,
     movies: []
@@ -11,12 +11,14 @@ class Home extends React.Component{
   getMovies = async () => {
     const {
       data: {
-        data: { movies } 
-      } 
-    } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
+        data: { movies }
+      }
+    } = await axios.get(
+      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
+    );
     this.setState({ movies, isLoading: false });
   };
-  componentDidMount(){
+  componentDidMount() {
     this.getMovies();
   }
   render() {
@@ -30,13 +32,13 @@ class Home extends React.Component{
         ) : (
           <div className="movies">
             {movies.map(movie => (
-              <Movie 
+              <Movie
                 key={movie.id}
-                id={movie.id} 
-                year={movie.year} 
-                title={movie.title} 
-                summary={movie.summary} 
-                poster={movie.medium_cover_image} 
+                id={movie.id}
+                year={movie.year}
+                title={movie.title}
+                summary={movie.summary}
+                poster={movie.medium_cover_image}
                 genres={movie.genres}
               />
             ))}
