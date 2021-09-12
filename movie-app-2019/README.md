@@ -101,7 +101,8 @@ React JS Fundamentals Course (2019 Update)
   npm i axios
   import axios from "axios";
   ```
-  - fetch 위에 있는 작은 layer
+  - 일반적으로 JS에서 data를 fetch하는 방법은 fetch()를 사용하는 것이다.  
+    하지만 더 나은 방법은, 마치 fetch 위에 있는 작은 layer인 axios를 사용하는 것이다.
   - 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리
   - axios의 Request method에는 다음과 같은 것들이 있다. 여기서 url은 API의 주소.
     - 데이터 조회 : **axios.get**(url[, config])
