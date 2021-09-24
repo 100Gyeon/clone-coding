@@ -1,4 +1,11 @@
 import React from "react";
 
-const Home = () => <span>Home</span>;
+const Home = () => {
+  return (<div>
+    <form>
+      <input type="text" placeholder="What's on your mind?" maxLength={120} />
+      <input type="submit" value="Tweet" />
+    </form>
+  </div>);
+}
 export default Home;
