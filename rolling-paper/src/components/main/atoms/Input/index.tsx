@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
 interface InputProps {
   value: string;
@@ -9,7 +10,11 @@ interface InputProps {
 
 const Input = (props: InputProps) => {
   const { placeholder, value, onChange, onKeyUp } = props;
-  return <input type="text" value={value} placeholder={placeholder} onChange={onChange} onKeyUp={onKeyUp} />;
+  return <StyledInput type="text" value={value} placeholder={placeholder} onChange={onChange} onKeyUp={onKeyUp} />;
 };
 
 export default Input;
+
+const StyledInput = styled('input')`
+  margin-bottom: 1rem;
+`;
