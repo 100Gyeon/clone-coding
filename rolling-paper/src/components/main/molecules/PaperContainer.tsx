@@ -1,4 +1,4 @@
-import ColumnButton from '../ColumnButton';
+import ColumnButton from '../atoms/ColumnButton';
 
 const PaperContainer = () => {
   return (
