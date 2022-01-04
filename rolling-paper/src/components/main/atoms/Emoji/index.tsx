@@ -1,24 +1,25 @@
 import styled from '@emotion/styled';
 
-const EmojiButton = () => {
+const Emoji = () => {
   return (
     <StyledRoot>
-      <button>💗</button>
-      <button>😻</button>
-      <button>🐾</button>
+      <div>💗</div>
+      <div>😻</div>
+      <div>🐾</div>
     </StyledRoot>
   );
 };
 
-export default EmojiButton;
+export default Emoji;
 
 const StyledRoot = styled('div')`
   display: flex;
   margin: 1rem auto;
 
-  & > button {
+  & > div {
     padding: 1rem;
     font-size: 2rem;
+    cursor: grab;
 
     &:not(:first-of-type) {
       margin-left: 1rem;

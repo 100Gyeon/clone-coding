@@ -1,7 +1,7 @@
-import EmojiButton from '../EmojiButton';
+import Emoji from '../atoms/Emoji';
 
 const EmojiContainer = () => {
-  return <EmojiButton />;
+  return <Emoji />;
 };
 
 export default EmojiContainer;
