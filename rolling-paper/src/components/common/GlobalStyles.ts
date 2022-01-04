@@ -29,6 +29,7 @@ export const GlobalStyles = css`
     cursor: pointer;
     border: none;
     outline: none;
+    background: transparent;
   }
 
   a {
