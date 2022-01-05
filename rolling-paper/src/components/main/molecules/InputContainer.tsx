@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Input from '../atoms/Input';
+import { useRecoilState } from 'recoil';
+import contentState from '../../../states/Content';
+import writerState from '../../../states/Writer';
 
 const InputContainer = () => {
   const [receiver, setReceiver] = useState('');
-  const [content, setContent] = useState('');
-  const [writer, setWriter] = useState('');
+  const [content, setContent] = useRecoilState(contentState);
+  const [writer, setWriter] = useRecoilState(writerState);
   const storage = localStorage.getItem('receiver');
 
   const handleReceiverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +40,6 @@ const InputContainer = () => {
         alert('내용을 입력하세요.');
         return;
       }
-      setContent('');
     }
   };
 
@@ -47,7 +49,6 @@ const InputContainer = () => {
         alert('작성자를 입력하세요.');
         return;
       }
-      setWriter('');
     }
   };
 

@@ -2,15 +2,24 @@ import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import ColorButton from '../atoms/ColorButton';
 import AddButton from '../atoms/AddButton';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import contentState from '../../../states/Content';
+import writerState from '../../../states/Writer';
+import colorState from '../../../states/Color';
 
 const ButtonContainer = () => {
   // 클릭한 버튼에 border 설정
   const [prev, setPrev] = useState('');
   const [current, setCurrent] = useState('');
 
+  const content = useRecoilValue(contentState);
+  const writer = useRecoilValue(writerState);
+  const [color, setColor] = useRecoilState(colorState);
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!(e.target instanceof HTMLButtonElement)) return;
     setCurrent(e.target.id);
+    setColor(e.target.innerText);
   };
 
   useEffect(() => {
@@ -27,6 +36,10 @@ const ButtonContainer = () => {
     setPrev(current);
   }, [current]);
 
+  const addList = () => {
+    console.log(content, writer, color);
+  };
+
   return (
     <StyledRoot>
       <ColorButton onClick={handleClick} color="#FED3DC" id="pink">
@@ -38,7 +51,7 @@ const ButtonContainer = () => {
       <ColorButton onClick={handleClick} color="#FFFEAF" id="yellow">
         #FFFEAF
       </ColorButton>
-      <AddButton />
+      <AddButton onClick={addList} />
     </StyledRoot>
   );
 };
