@@ -10,17 +10,14 @@ const InputContainer = () => {
 
   const handleReceiverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setReceiver(e.target.value);
-    console.log(`handleReceiverChange : ${receiver}`);
   };
 
   const handleContentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setContent(e.target.value);
-    console.log(`handleContentChange : ${content}`);
   };
 
   const handleWriterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setWriter(e.target.value);
-    console.log(`handleWriterChange : ${writer}`);
   };
 
   const handleReceiverKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -29,7 +26,6 @@ const InputContainer = () => {
         alert('받는 사람을 입력하세요.');
         return;
       }
-      console.log(`handleReceiverKeyUp : ${receiver}`);
       localStorage.setItem('receiver', receiver);
       setReceiver('');
     }
@@ -41,7 +37,6 @@ const InputContainer = () => {
         alert('내용을 입력하세요.');
         return;
       }
-      console.log(`handleContentKeyUp : ${content}`);
       setContent('');
     }
   };
@@ -52,7 +47,6 @@ const InputContainer = () => {
         alert('작성자를 입력하세요.');
         return;
       }
-      console.log(`handleWriterKeyUp : ${writer}`);
       setWriter('');
     }
   };
