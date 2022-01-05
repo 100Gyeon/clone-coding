@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const AddButton = () => {
-  return <StyledAddBtn>+</StyledAddBtn>;
+interface AddButtonProps {
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+const AddButton = (props: AddButtonProps) => {
+  const { onClick } = props;
+  return <StyledAddBtn onClick={onClick}>+</StyledAddBtn>;
 };
 
 export default AddButton;
