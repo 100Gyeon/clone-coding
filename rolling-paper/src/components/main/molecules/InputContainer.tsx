@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import styled from '@emotion/styled';
 import Input from '../atoms/Input';
 
 const InputContainer = () => {
   const [receiver, setReceiver] = useState('');
   const [content, setContent] = useState('');
   const [writer, setWriter] = useState('');
+  const storage = localStorage.getItem('receiver');
 
   const handleReceiverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setReceiver(e.target.value);
@@ -24,10 +26,11 @@ const InputContainer = () => {
   const handleReceiverKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       if (!receiver) {
-        alert('입력된 내용이 없습니다.');
+        alert('받는 사람을 입력하세요.');
         return;
       }
       console.log(`handleReceiverKeyUp : ${receiver}`);
+      localStorage.setItem('receiver', receiver);
       setReceiver('');
     }
   };
@@ -35,7 +38,7 @@ const InputContainer = () => {
   const handleContentKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       if (!content) {
-        alert('입력된 내용이 없습니다.');
+        alert('내용을 입력하세요.');
         return;
       }
       console.log(`handleContentKeyUp : ${content}`);
@@ -46,7 +49,7 @@ const InputContainer = () => {
   const handleWriterKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       if (!writer) {
-        alert('입력된 내용이 없습니다.');
+        alert('작성자를 입력하세요.');
         return;
       }
       console.log(`handleWriterKeyUp : ${writer}`);
@@ -56,7 +59,11 @@ const InputContainer = () => {
 
   return (
     <>
-      <Input value={receiver} placeholder="받는 사람" onChange={handleReceiverChange} onKeyUp={handleReceiverKeyUp} />
+      {storage ? (
+        <StyledDiv>To. {storage}</StyledDiv>
+      ) : (
+        <Input value={receiver} placeholder="받는 사람" onChange={handleReceiverChange} onKeyUp={handleReceiverKeyUp} />
+      )}
       <Input value={content} placeholder="내용" onChange={handleContentChange} onKeyUp={handleContentKeyUp} />
       <Input value={writer} placeholder="작성자" onChange={handleWriterChange} onKeyUp={handleWriterKeyUp} />
     </>
@@ -64,3 +71,9 @@ const InputContainer = () => {
 };
 
 export default InputContainer;
+
+const StyledDiv = styled('div')`
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+`;
