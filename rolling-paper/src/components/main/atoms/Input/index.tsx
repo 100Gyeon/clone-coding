@@ -17,4 +17,5 @@ export default Input;
 
 const StyledInput = styled('input')`
   margin-bottom: 1rem;
+  padding: 0.5rem;
 `;
